@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison Zoria | 铭兹世家高定珠宝与皮具</title>
+    <title>Maison Zoria | 铭兹世家 · 顶级珠宝腕表与私人高定皮具</title>
     <!-- 引入 Google Fonts 顶奢字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700;900&family=Noto+Serif+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ================= 1. 20W美金极致紫色星空顶配色 ================= */
+        /* ================= 1. 顶奢黑金极光紫配色体系 ================= */
         :root {
-            --bg-deep-space: #05020a;
-            --purple-glow: rgba(168, 85, 247, 0.4);
+            --bg-deep-space: #040208;
+            --purple-glow: rgba(168, 85, 247, 0.35);
             --gold-primary: #dfb36e;
             --gold-light: #fbe3b5;
             --gold-dark: #966e31;
-            --glass-bg: rgba(20, 10, 35, 0.75);
-            --glass-border: rgba(223, 179, 110, 0.3);
+            --glass-bg: rgba(18, 9, 32, 0.75);
+            --glass-border: rgba(223, 179, 110, 0.28);
             --text-main: #f5f0fb;
             --text-muted: #ab9ebf;
         }
@@ -145,7 +145,7 @@
             font-weight: 600;
         }
 
-        .cart-icon-btn {
+        .concierge-btn {
             background: rgba(168, 85, 247, 0.12);
             border: 1px solid var(--gold-primary);
             color: var(--gold-light);
@@ -158,22 +158,9 @@
             transition: all 0.3s;
         }
 
-        .cart-icon-btn:hover {
+        .concierge-btn:hover {
             border-color: var(--gold-light);
             box-shadow: 0 0 20px var(--purple-glow);
-        }
-
-        .cart-badge {
-            background: var(--gold-primary);
-            color: #000;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: bold;
         }
 
         /* ================= 3. Hero 视觉首屏 ================= */
@@ -453,149 +440,7 @@
             color: #e5def0;
         }
 
-        /* ================= 8. 侧边栏购物车 Drawer ================= */
-        .cart-drawer-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s ease;
-        }
-
-        .cart-drawer-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .cart-drawer {
-            position: fixed;
-            top: 0;
-            right: -480px;
-            width: 100%;
-            max-width: 480px;
-            height: 100vh;
-            background: #0a0414;
-            border-left: 1px solid var(--gold-primary);
-            z-index: 1001;
-            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            padding: 2.5rem 2rem;
-            box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9);
-        }
-
-        .cart-drawer.active {
-            right: 0;
-        }
-
-        .drawer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .drawer-close {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        .drawer-close:hover { color: var(--gold-light); }
-
-        .cart-items-list {
-            flex: 1;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            padding-right: 0.5rem;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 1rem;
-            background: rgba(20, 10, 35, 0.6);
-            border: 1px solid var(--glass-border);
-            padding: 1rem;
-            align-items: center;
-        }
-
-        .cart-item-img {
-            width: 75px;
-            height: 75px;
-            object-fit: cover;
-            border: 1px solid var(--gold-dark);
-        }
-
-        .cart-item-details { flex: 1; }
-
-        .cart-item-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--gold-light);
-        }
-
-        .cart-item-price {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-top: 0.3rem;
-        }
-
-        .cart-item-controls {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-top: 0.6rem;
-        }
-
-        .qty-btn {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid var(--glass-border);
-            color: #fff;
-            width: 24px;
-            height: 24px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cart-item-remove {
-            color: #ff5555;
-            font-size: 0.75rem;
-            cursor: pointer;
-            margin-left: auto;
-            background: none;
-            border: none;
-        }
-
-        .drawer-footer {
-            border-top: 1px solid var(--glass-border);
-            padding-top: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .drawer-total {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gold-light);
-            margin-bottom: 1.5rem;
-        }
-
-        /* ================= 9. 结算弹窗 Modal ================= */
+        /* ================= 8. 私享尊享预约 Modal ================= */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -623,12 +468,13 @@
             border: 1px solid var(--gold-primary);
             border-radius: 2px;
             width: 90%;
-            max-width: 680px;
+            max-width: 620px;
             padding: 2.5rem;
             position: relative;
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px var(--purple-glow);
             max-height: 90vh;
             overflow-y: auto;
+            text-align: center;
         }
 
         .modal-close {
@@ -644,132 +490,40 @@
 
         .modal-title {
             font-size: 1.6rem;
-            text-align: center;
             margin-bottom: 0.3rem;
         }
 
-        .order-summary-box {
+        .selected-item-preview {
             background: rgba(5, 2, 10, 0.8);
-            border: 1px dashed var(--glass-border);
+            border: 1px solid var(--glass-border);
             padding: 1.2rem;
             margin: 1.5rem 0;
-            max-height: 160px;
-            overflow-y: auto;
-        }
-
-        .order-summary-item {
             display: flex;
-            justify-content: space-between;
-            font-size: 0.88rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
+            align-items: center;
+            gap: 1.2rem;
+            text-align: left;
         }
 
-        .order-summary-total {
-            display: flex;
-            justify-content: space-between;
-            border-top: 1px solid var(--glass-border);
-            padding-top: 0.8rem;
-            margin-top: 0.8rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gold-primary);
+        .selected-item-img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border: 1px solid var(--gold-dark);
         }
 
-        .pay-tabs {
-            display: flex;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .pay-tab {
-            flex: 1;
-            padding: 0.85rem;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            color: var(--text-muted);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-        }
-
-        .pay-tab.active {
-            background: rgba(168, 85, 247, 0.25);
-            border-color: var(--gold-primary);
-            color: var(--gold-light);
-        }
-
-        .pay-panel { display: none; text-align: center; }
-        .pay-panel.active { display: block; }
-
-        .bank-card-box {
+        .concierge-card-box {
             background: linear-gradient(135deg, #180930 0%, #070210 100%);
             border: 1px solid var(--gold-primary);
             padding: 1.6rem;
             border-radius: 4px;
             text-align: left;
+            margin-bottom: 1.5rem;
+            line-height: 2;
         }
 
-        .bank-card-num {
-            font-family: monospace;
-            font-size: 1.45rem;
-            letter-spacing: 0.15em;
+        .concierge-card-box span {
             color: var(--gold-light);
-            margin: 0.8rem 0;
-            word-break: break-all;
-        }
-
-        .copy-btn {
-            background: var(--gold-primary);
-            color: #000;
-            border: none;
-            padding: 0.4rem 1rem;
-            font-size: 0.75rem;
-            cursor: pointer;
-            font-weight: 700;
-            float: right;
-        }
-
-        .qr-code-img {
-            width: 220px;
-            height: 220px;
-            object-fit: contain;
-            border: 2px solid var(--gold-primary);
-            margin: 1rem auto;
-            display: block;
-            background: #fff;
-        }
-
-        .contact-info-block {
-            margin-top: 1.5rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid var(--glass-border);
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            text-align: left;
-            line-height: 1.8;
-        }
-
-        .input-group {
-            margin-bottom: 1.2rem;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            margin-bottom: 0.4rem;
-        }
-
-        .input-group input {
-            width: 100%;
-            background: rgba(5, 2, 10, 0.8);
-            border: 1px solid var(--glass-border);
-            padding: 0.7rem 0.9rem;
-            color: #fff;
-            font-size: 0.85rem;
+            font-weight: bold;
         }
 
         /* 页脚 */
@@ -798,11 +552,11 @@
         <div class="container header-content">
             <a href="#" class="logo cinzel gold-gradient-text">MAISON ZORIA</a>
             <div class="nav-info">
-                <div>微信私享专线：<span>XM0303600</span></div>
-                <div>官方邮箱：<span>MINGZIHAIBAO@GMAIL.COM</span></div>
+                <div>私享专线微信：<span>XM0303600</span></div>
+                <div>官方沟通邮箱：<span>MINGZIHAIBAO@GMAIL.COM</span></div>
             </div>
-            <button class="cart-icon-btn cinzel" onclick="toggleCartDrawer()">
-                🛒 购物袋 <span class="cart-badge" id="cartCount">0</span>
+            <button class="concierge-btn cinzel" onclick="openGeneralConcierge()">
+                ✦ 预约私密管家 (CONCIERGE)
             </button>
         </div>
     </header>
@@ -889,8 +643,7 @@
                         </p>
                         <div class="card-price cinzel">¥ 3,000,000 CNY</div>
                         <div class="card-actions">
-                            <button class="gold-border-btn cinzel" onclick="addToCart('Dream Awakening 梦醒时分 珠宝腕表', 3000000, 'Dream Awakening.png')">加购物袋</button>
-                            <button class="gold-solid-btn cinzel" onclick="buyNow('Dream Awakening 梦醒时分 珠宝腕表', 3000000)">立即预定</button>
+                            <button class="gold-solid-btn cinzel" style="width: 100%;" onclick="openConciergeModal('Dream Awakening 梦醒时分 珠宝腕表', '¥ 3,000,000 CNY', 'Dream Awakening.png')">预订鉴赏 (PRIVATE INQUIRY)</button>
                         </div>
                     </div>
                 </div>
@@ -906,8 +659,7 @@
                         <div class="card-title-cn">梦境旋转木马 · 奢华皮具</div>
                         <div class="card-price cinzel">¥ 370,000 CNY</div>
                         <div class="card-actions">
-                            <button class="gold-border-btn cinzel" onclick="addToCart('Carousel Dreams 梦境旋转木马', 370000, 'Carousel Dreams.jpg')">加购物袋</button>
-                            <button class="gold-solid-btn cinzel" onclick="buyNow('Carousel Dreams 梦境旋转木马', 370000)">立即预定</button>
+                            <button class="gold-border-btn cinzel" style="width: 100%;" onclick="openConciergeModal('Carousel Dreams 梦境旋转木马', '¥ 370,000 CNY', 'Carousel Dreams.jpg')">私享预订 (INQUIRE)</button>
                         </div>
                     </div>
                 </div>
@@ -923,8 +675,7 @@
                         <div class="card-title-cn">云舒双阙 · 高定手袋</div>
                         <div class="card-price cinzel">¥ 290,000 CNY</div>
                         <div class="card-actions">
-                            <button class="gold-border-btn cinzel" onclick="addToCart('Cloud Bloom 云舒双阙', 290000, 'Cloud Bloom.jpg')">加购物袋</button>
-                            <button class="gold-solid-btn cinzel" onclick="buyNow('Cloud Bloom 云舒双阙', 290000)">立即预定</button>
+                            <button class="gold-border-btn cinzel" style="width: 100%;" onclick="openConciergeModal('Cloud Bloom 云舒双阙', '¥ 290,000 CNY', 'Cloud Bloom.jpg')">私享预订 (INQUIRE)</button>
                         </div>
                     </div>
                 </div>
@@ -940,8 +691,7 @@
                         <div class="card-title-cn">白堡星梦 · 高定手袋</div>
                         <div class="card-price cinzel">¥ 230,000 CNY</div>
                         <div class="card-actions">
-                            <button class="gold-border-btn cinzel" onclick="addToCart('Aurora Castle 白堡星梦', 230000, 'Aurora Castle.jpg')">加购物袋</button>
-                            <button class="gold-solid-btn cinzel" onclick="buyNow('Aurora Castle 白堡星梦', 230000)">立即预定</button>
+                            <button class="gold-border-btn cinzel" style="width: 100%;" onclick="openConciergeModal('Aurora Castle 白堡星梦', '¥ 230,000 CNY', 'Aurora Castle.jpg')">私享预订 (INQUIRE)</button>
                         </div>
                     </div>
                 </div>
@@ -957,8 +707,7 @@
                         <div class="card-title-cn">夜色疗愈 · 典藏皮具</div>
                         <div class="card-price cinzel">¥ 210,000 CNY</div>
                         <div class="card-actions">
-                            <button class="gold-border-btn cinzel" onclick="addToCart('Nocturnal Cure 夜色疗愈', 210000, 'Nocturnal Cure.jpg')">加购物袋</button>
-                            <button class="gold-solid-btn cinzel" onclick="buyNow('Nocturnal Cure 夜色疗愈', 210000)">立即预定</button>
+                            <button class="gold-border-btn cinzel" style="width: 100%;" onclick="openConciergeModal('Nocturnal Cure 夜色疗愈', '¥ 210,000 CNY', 'Nocturnal Cure.jpg')">私享预订 (INQUIRE)</button>
                         </div>
                     </div>
                 </div>
@@ -974,8 +723,7 @@
                         <div class="card-title-cn">月湾灵猫 · 高定手袋</div>
                         <div class="card-price cinzel">¥ 186,000 CNY</div>
                         <div class="card-actions">
-                            <button class="gold-border-btn cinzel" onclick="addToCart('Lunar Cove Cat 月湾灵猫', 186000, 'Lunar Cove Cat Bag.jpg')">加购物袋</button>
-                            <button class="gold-solid-btn cinzel" onclick="buyNow('Lunar Cove Cat 月湾灵猫', 186000)">立即预定</button>
+                            <button class="gold-border-btn cinzel" style="width: 100%;" onclick="openConciergeModal('Lunar Cove Cat 月湾灵猫', '¥ 186,000 CNY', 'Lunar Cove Cat Bag.jpg')">私享预订 (INQUIRE)</button>
                         </div>
                     </div>
                 </div>
@@ -991,8 +739,7 @@
                         <div class="card-title-cn">新月星芒 · 典藏手袋</div>
                         <div class="card-price cinzel">¥ 120,000 CNY</div>
                         <div class="card-actions">
-                            <button class="gold-border-btn cinzel" onclick="addToCart('Lunar Nova 新月星芒', 120000, 'Lunar Nova.png')">加购物袋</button>
-                            <button class="gold-solid-btn cinzel" onclick="buyNow('Lunar Nova 新月星芒', 120000)">立即预定</button>
+                            <button class="gold-border-btn cinzel" style="width: 100%;" onclick="openConciergeModal('Lunar Nova 新月星芒', '¥ 120,000 CNY', 'Lunar Nova.png')">私享预订 (INQUIRE)</button>
                         </div>
                     </div>
                 </div>
@@ -1013,79 +760,35 @@
         </div>
     </section>
 
-    <!-- 侧边栏购物车 Drawer -->
-    <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCartDrawer()"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div class="drawer-header">
-            <h3 class="cinzel gold-gradient-text">MY SHOPPING BAG</h3>
-            <button class="drawer-close" onclick="toggleCartDrawer()">&times;</button>
-        </div>
-        <div class="cart-items-list" id="cartItemsList">
-            <!-- 动态购物车列表 -->
-        </div>
-        <div class="drawer-footer">
-            <div class="drawer-total">
-                <span>小计金额:</span>
-                <span id="drawerTotalAmount">¥ 0 CNY</span>
-            </div>
-            <button class="gold-solid-btn cinzel" style="width: 100%; padding: 1rem;" onclick="checkoutCart()">前往私享结算 (CHECKOUT)</button>
-        </div>
-    </div>
-
-    <!-- 支付与专享结账 Modal -->
-    <div class="modal-overlay" id="checkoutModal">
+    <!-- VIP 私密预订 Modal -->
+    <div class="modal-overlay" id="conciergeModal">
         <div class="modal-box">
-            <button class="modal-close" onclick="closeCheckout()">&times;</button>
-            <h3 class="modal-title cinzel gold-gradient-text">VIP PRIVATE CHECKOUT</h3>
-            <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Maison Zoria 私享尊贵结算通道</div>
+            <button class="modal-close" onclick="closeConciergeModal()">&times;</button>
+            <h3 class="modal-title cinzel gold-gradient-text">VIP BESPOKE CONCIERGE</h3>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1rem;">Maison Zoria 私密专享管家预订通道</div>
 
-            <!-- 选购明细 -->
-            <div class="order-summary-box" id="modalOrderSummary">
-                <!-- 动态插入结构 -->
-            </div>
-
-            <!-- 收货信息 -->
-            <div class="input-group">
-                <label>贵宾姓名与私享交付地址 (Recipient & Address):</label>
-                <input type="text" placeholder="例如：张先生 / 上海市黄浦区..." id="clientAddress">
-            </div>
-
-            <!-- 支付 Tab -->
-            <div class="pay-tabs">
-                <div class="pay-tab active" onclick="switchPayTab('bank')">银行卡公户/电汇</div>
-                <div class="pay-tab" onclick="switchPayTab('wechat')">微信支付 (WeChat)</div>
-                <div class="pay-tab" onclick="switchPayTab('alipay')">支付宝 (Alipay)</div>
-            </div>
-
-            <!-- Panel 1: Bank -->
-            <div class="pay-panel active" id="panel-bank">
-                <div class="bank-card-box">
-                    <button class="copy-btn" onclick="copyCard()">复制卡号</button>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">收款银行账号 (Card Number)</div>
-                    <div class="bank-card-num">6217 0019 3004 3294 322</div>
-                    <div style="font-size: 0.85rem; color: var(--text-main);">账户名称：Maison Zoria 铭兹高定账户</div>
+            <!-- 选购作品预览 -->
+            <div class="selected-item-preview" id="previewBox">
+                <img src="" id="modalImg" class="selected-item-img">
+                <div>
+                    <div id="modalTitle" style="font-size: 1.1rem; font-weight: bold; color: var(--gold-light);"></div>
+                    <div id="modalPrice" class="cinzel" style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.3rem;"></div>
                 </div>
             </div>
 
-            <!-- Panel 2: WeChat -->
-            <div class="pay-panel" id="panel-wechat">
-                <p style="font-size: 0.8rem; color: var(--text-muted);">微信扫描二维码完成结算</p>
-                <img src="微信收款码.jpg" alt="微信收款码" class="qr-code-img">
+            <!-- 管家联系面板 -->
+            <div class="concierge-card-box">
+                <div style="font-size: 0.88rem; color: var(--text-main); margin-bottom: 0.8rem; border-bottom: 1px dashed var(--glass-border); padding-bottom: 0.6rem;">
+                    尊贵的藏家，为确保您的资金安全与私密体验，本世家所有高定作品均采取<strong>一对一专程管家交付模式</strong>。
+                </div>
+                <div>📌 <strong>私享管家微信：</strong><span>XM0303600</span></div>
+                <div>✉️ <strong>官方沟通邮箱：</strong><span>MINGZIHAIBAO@GMAIL.COM</span></div>
+                <div>🌐 <strong>结算方式支持：</strong>支持对公电汇 / 多链加密货币 (USDT/BTC/SOL) / 专人保价交付</div>
             </div>
 
-            <!-- Panel 3: Alipay -->
-            <div class="pay-panel" id="panel-alipay">
-                <p style="font-size: 0.8rem; color: var(--text-muted);">支付宝扫描二维码完成结算（支持花呗/分期）</p>
-                <img src="支付宝收款码.png" alt="支付宝收款码" class="qr-code-img">
-            </div>
-
-            <!-- 官方联系方式 -->
-            <div class="contact-info-block">
-                <div>📌 <strong>官方专享客服微信号：</strong><span style="color: var(--gold-light);">XM0303600</span></div>
-                <div>✉️ <strong>官方沟通电子邮箱：</strong><span style="color: var(--gold-light);">MINGZIHAIBAO@GMAIL.COM</span></div>
-                <div style="font-size: 0.75rem; margin-top: 0.4rem; color: #7a6e8f;">* 汇款或扫码支付完成后，请联系官方微信提供凭证，管家将为您启动专程送达保价流程。</div>
-            </div>
-
+            <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.6;">
+                请添加管家微信，发送您心仪的作品名称，世家专属管家将为您提供一对一鉴赏品鉴、定制细节确认及加密结算通道服务。
+            </p>
         </div>
     </div>
 
@@ -1093,7 +796,7 @@
     <footer>
         <div class="container">
             <div class="cinzel gold-gradient-text" style="font-size: 1.6rem; margin-bottom: 0.8rem;">MAISON ZORIA</div>
-            <p style="letter-spacing: 0.15em; margin-bottom: 0.8rem;">官方微信：XM0303600 | 官方邮箱：MINGZIHAIBAO@GMAIL.COM</p>
+            <p style="letter-spacing: 0.15em; margin-bottom: 0.8rem;">私享微信：XM0303600 | 官方邮箱：MINGZIHAIBAO@GMAIL.COM</p>
             <p style="font-size: 0.75rem; color: #665b7a;">&copy; 2026 MAISON ZORIA. ALL RIGHTS RESERVED. PRIVATE ATELIER COLLECTION.</p>
         </div>
     </footer>
@@ -1144,154 +847,24 @@
         }
         animateStars();
 
-        /* 2. 购物车逻辑 */
-        let cart = [];
-
-        function addToCart(name, price, img) {
-            const existing = cart.find(item => item.name === name);
-            if (existing) {
-                existing.qty++;
-            } else {
-                cart.push({ name, price, img, qty: 1 });
-            }
-            updateCartUI();
-            toggleCartDrawer(true);
+        /* 2. Modal 私密管家弹窗逻辑 */
+        function openConciergeModal(title, price, img) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalImg').src = img;
+            document.getElementById('previewBox').style.display = 'flex';
+            document.getElementById('conciergeModal').classList.add('active');
         }
 
-        function updateQty(name, delta) {
-            const item = cart.find(i => i.name === name);
-            if (item) {
-                item.qty += delta;
-                if (item.qty <= 0) cart = cart.filter(i => i.name !== name);
-            }
-            updateCartUI();
+        function openGeneralConcierge() {
+            document.getElementById('modalTitle').innerText = "Maison Zoria 私享全线作品定制";
+            document.getElementById('modalPrice').innerText = "ATELIER HIGH CUSTOMIZATION";
+            document.getElementById('previewBox').style.display = 'none';
+            document.getElementById('conciergeModal').classList.add('active');
         }
 
-        function removeFromCart(name) {
-            cart = cart.filter(i => i.name !== name);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const listEl = document.getElementById('cartItemsList');
-            const countEl = document.getElementById('cartCount');
-            const totalEl = document.getElementById('drawerTotalAmount');
-
-            let totalQty = 0;
-            let totalPrice = 0;
-            listEl.innerHTML = '';
-
-            if (cart.length === 0) {
-                listEl.innerHTML = '<div style="text-align:center; color: var(--text-muted); padding: 3rem 0;">购物袋空空如也</div>';
-            } else {
-                cart.forEach(item => {
-                    totalQty += item.qty;
-                    totalPrice += item.price * item.qty;
-                    listEl.innerHTML += `
-                        <div class="cart-item">
-                            <img src="${item.img}" class="cart-item-img">
-                            <div class="cart-item-details">
-                                <div class="cart-item-title">${item.name}</div>
-                                <div class="cart-item-price">¥ ${item.price.toLocaleString()} CNY</div>
-                                <div class="cart-item-controls">
-                                    <button class="qty-btn" onclick="updateQty('${item.name}', -1)">-</button>
-                                    <span style="font-size:0.85rem">${item.qty}</span>
-                                    <button class="qty-btn" onclick="updateQty('${item.name}', 1)">+</button>
-                                </div>
-                            </div>
-                            <button class="cart-item-remove" onclick="removeFromCart('${item.name}')">删除</button>
-                        </div>
-                    `;
-                });
-            }
-
-            countEl.innerText = totalQty;
-            totalEl.innerText = '¥ ' + totalPrice.toLocaleString() + ' CNY';
-        }
-
-        function toggleCartDrawer(open) {
-            const drawer = document.getElementById('cartDrawer');
-            const overlay = document.getElementById('cartOverlay');
-            if (open === true) {
-                drawer.classList.add('active');
-                overlay.classList.add('active');
-            } else if (open === false) {
-                drawer.classList.remove('active');
-                overlay.classList.remove('active');
-            } else {
-                drawer.classList.toggle('active');
-                overlay.classList.toggle('active');
-            }
-        }
-
-        /* 3. 结算逻辑 */
-        function buyNow(name, price) {
-            renderModalCheckout([{ name, price, qty: 1 }]);
-        }
-
-        function checkoutCart() {
-            if (cart.length === 0) {
-                alert('请先挑选作品加入购物袋');
-                return;
-            }
-            toggleCartDrawer(false);
-            renderModalCheckout(cart);
-        }
-
-        function renderModalCheckout(items) {
-            const container = document.getElementById('modalOrderSummary');
-            let total = 0;
-            let html = '';
-
-            items.forEach(item => {
-                const sub = item.price * item.qty;
-                total += sub;
-                html += `
-                    <div class="order-summary-item">
-                        <span>${item.name} x ${item.qty}</span>
-                        <span class="cinzel">¥ ${sub.toLocaleString()} CNY</span>
-                    </div>
-                `;
-            });
-
-            html += `
-                <div class="order-summary-total">
-                    <span>结算总额 (TOTAL):</span>
-                    <span class="cinzel">¥ ${total.toLocaleString()} CNY</span>
-                </div>
-            `;
-
-            container.innerHTML = html;
-            document.getElementById('checkoutModal').classList.add('active');
-        }
-
-        function closeCheckout() {
-            document.getElementById('checkoutModal').classList.remove('active');
-        }
-
-        function switchPayTab(type) {
-            const tabs = document.querySelectorAll('.pay-tab');
-            const panels = document.querySelectorAll('.pay-panel');
-            tabs.forEach(t => t.classList.remove('active'));
-            panels.forEach(p => p.classList.remove('active'));
-
-            if (type === 'bank') {
-                tabs[0].classList.add('active');
-                document.getElementById('panel-bank').classList.add('active');
-            } else if (type === 'wechat') {
-                tabs[1].classList.add('active');
-                document.getElementById('panel-wechat').classList.add('active');
-            } else if (type === 'alipay') {
-                tabs[2].classList.add('active');
-                document.getElementById('panel-alipay').classList.add('active');
-            }
-        }
-
-        function copyCard() {
-            const num = '6217001930043294322';
-            navigator.clipboard.writeText(num).then(() => {
-                alert('已成功复制银行卡号：' + num);
-            });
+        function closeConciergeModal() {
+            document.getElementById('conciergeModal').classList.remove('active');
         }
     </script>
 </body>
