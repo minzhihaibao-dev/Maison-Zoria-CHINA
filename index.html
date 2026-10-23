@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison Zoria | 铭兹世家高定珠宝与皮具</title>
+    <meta name="theme-color" content="#090909">
+    <meta name="description" content="Maison Zoria — Exceptional objects, considered design, and private commissions.">
+    <title>MAISON ZORIA — Private Collection</title>
     <!-- 引入 Google Fonts 顶奢字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -787,6 +789,172 @@
             .card.featured { grid-column: span 1; flex-direction: column; }
             .nav-info { display: none; }
         }
+    
+    /* MAISON ZORIA — quiet luxury art direction */
+    :root {
+      --bg-deep-space: #090909;
+      --purple-glow: rgba(212, 175, 116, .08);
+      --gold-primary: #c7aa78;
+      --gold-light: #e8d7b5;
+      --gold-dark: #6f5c3c;
+      --glass-bg: rgba(17, 17, 17, .92);
+      --glass-border: rgba(199, 170, 120, .22);
+      --text-main: #f2efe9;
+      --text-muted: #aaa49a;
+    }
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    body {
+      background: #090909;
+      background-image:
+        radial-gradient(ellipse at 50% -20%, rgba(130, 108, 73, .12), transparent 52%),
+        linear-gradient(180deg, #0b0b0b 0%, #090909 52%, #0d0c0a 100%);
+      color: var(--text-main);
+      font-family: "Noto Serif SC", Georgia, serif;
+      letter-spacing: .015em;
+    }
+    #starfield { opacity: .18; }
+    .container { max-width: 1320px; padding-left: clamp(1.1rem, 4vw, 3.5rem); padding-right: clamp(1.1rem, 4vw, 3.5rem); }
+    header {
+      padding: 1.1rem 0;
+      background: rgba(8,8,8,.88);
+      border-bottom-color: rgba(232,215,181,.13);
+      backdrop-filter: blur(22px);
+    }
+    .logo { font-size: 1.18rem; letter-spacing: .22em; }
+    .nav-info { gap: 1.7rem; font-size: .72rem; letter-spacing: .04em; }
+    .nav-info span { color: #e3d1ae; font-weight: 400; }
+    .cart-icon-btn {
+      background: transparent; border-color: rgba(199,170,120,.48);
+      color: #e8d7b5; font-size: .72rem; letter-spacing: .12em;
+    }
+    .hero {
+      min-height: 86vh; padding-top: 9rem; padding-bottom: 5rem;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.42)),
+        radial-gradient(ellipse at center, rgba(117,94,59,.11), transparent 58%);
+    }
+    .hero-badge {
+      border: 0; border-radius: 0; padding: 0 0 1.2rem;
+      background: transparent; color: #c7aa78;
+      font-size: .66rem; letter-spacing: .34em;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 5.2vw, 5.2rem);
+      line-height: 1.42; letter-spacing: .06em; margin-bottom: 1.5rem;
+    }
+    .hero-subtitle {
+      max-width: 660px; margin: 0 auto 2.8rem;
+      font-size: .88rem; line-height: 2.1; letter-spacing: .17em;
+      color: #b8b1a6;
+    }
+    .gold-gradient-text {
+      background: linear-gradient(110deg, #f0e4cc 0%, #c7aa78 45%, #e7d6b5 75%, #9b8054 100%);
+      -webkit-background-clip: text; background-clip: text;
+    }
+    .gold-border-btn, .gold-solid-btn {
+      border-radius: 0; font-size: .69rem; letter-spacing: .16em;
+      padding: 1rem 1.5rem; min-height: 46px;
+    }
+    .gold-border-btn {
+      border-color: rgba(199,170,120,.56); color: #e7d6b5;
+    }
+    .gold-border-btn:hover {
+      background: #c7aa78; color: #111;
+      box-shadow: none;
+    }
+    .gold-solid-btn {
+      background: #c7aa78; color: #111; font-weight: 600;
+    }
+    .gold-solid-btn:hover { background: #e4d2ae; box-shadow: none; }
+    .brand-banner-section { padding: 2rem 0 6rem; }
+    .banner-img-box {
+      max-width: 1080px; padding: 0; border: 0;
+      background: transparent; box-shadow: 0 35px 90px rgba(0,0,0,.42);
+    }
+    .banner-img-box img { display: block; }
+    .craft-section {
+      padding: 7rem 0; background: rgba(255,255,255,.012);
+      border-top-color: rgba(232,215,181,.12);
+      border-bottom-color: rgba(232,215,181,.12);
+    }
+    .craft-grid { gap: 1.25rem; margin-top: 3rem; }
+    .craft-card {
+      padding: 1rem; background: transparent;
+      border: 1px solid rgba(232,215,181,.13);
+      backdrop-filter: none;
+    }
+    .craft-card:hover { transform: translateY(-3px); box-shadow: none; border-color: rgba(199,170,120,.45); }
+    .craft-img-wrapper { height: 260px; border: 0; margin-bottom: 1.3rem; }
+    .craft-img-wrapper img { filter: saturate(.82); }
+    .craft-title { font-size: .88rem; letter-spacing: .14em; font-weight: 400; }
+    .craft-desc { font-size: .78rem; line-height: 2; color: #aaa49a; }
+    .collection-section { padding: 8rem 0; }
+    .section-header { margin-bottom: 4rem; }
+    .section-title { font-size: clamp(1.5rem, 3vw, 2.4rem); letter-spacing: .12em; font-weight: 400; }
+    .section-desc { font-size: .78rem; letter-spacing: .14em; line-height: 2; color: #aaa49a; }
+    .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+    .card {
+      padding: 1rem; background: rgba(16,16,16,.74);
+      border: 1px solid rgba(232,215,181,.13);
+      backdrop-filter: none;
+    }
+    .card:hover { transform: translateY(-4px); border-color: rgba(199,170,120,.42); box-shadow: 0 22px 55px rgba(0,0,0,.28); }
+    .card-img-wrapper { height: clamp(260px, 31vw, 430px); background: #10100f; border: 0; }
+    .card-img-wrapper img { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+    .card:hover .card-img-wrapper img { transform: scale(1.025); }
+    .card-tag { background: rgba(9,9,9,.82); border-color: rgba(199,170,120,.45); font-size: .62rem; letter-spacing: .16em; }
+    .card-info { padding: 1.4rem .4rem .3rem; }
+    .card-title-en { font-size: 1.02rem; letter-spacing: .12em; font-weight: 400; }
+    .card-title-cn { font-size: .78rem; letter-spacing: .08em; color: #aaa49a; margin-bottom: 1.1rem; }
+    .card-price { font-size: 1rem; font-weight: 400; letter-spacing: .08em; margin-bottom: 1.3rem; }
+    .card-actions { gap: .55rem; }
+    .card-actions button { padding: .85rem .55rem; font-size: .64rem; letter-spacing: .08em; }
+    .card.featured {
+      border-color: rgba(199,170,120,.42);
+      background: linear-gradient(145deg, rgba(26,24,20,.94), rgba(13,13,12,.98));
+    }
+    .card.featured .card-img-wrapper { height: 460px; }
+    .story-section { padding: 8rem 0; background: rgba(255,255,255,.012); border-top-color: rgba(232,215,181,.12); }
+    .story-content { max-width: 760px; font-size: .98rem; line-height: 2.4; color: #d0c9bd; letter-spacing: .035em; }
+    .cart-drawer { background: #10100f; border-left-color: rgba(199,170,120,.6); }
+    .modal-box { background: #10100f; border-color: rgba(199,170,120,.55); box-shadow: 0 30px 90px rgba(0,0,0,.65); }
+    .bank-card-box { background: linear-gradient(135deg,#1c1a15,#0c0c0b); }
+    .pay-tab.active { background: rgba(199,170,120,.12); }
+    footer { border-top-color: rgba(232,215,181,.13); }
+    footer p { line-height: 2; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 2px solid #c7aa78; outline-offset: 4px; }
+    @media (min-width: 1100px) {
+      .card.featured { grid-column: span 2; }
+      .card.featured .card-img-wrapper { flex: 1.15; }
+      .card.featured .card-info { padding-left: 1.2rem; }
+    }
+    @media (max-width: 768px) {
+      header { padding: .9rem 0; }
+      .logo { font-size: .95rem; letter-spacing: .13em; }
+      .hero { min-height: 76vh; padding-top: 8rem; }
+      .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+      .hero-subtitle { font-size: .75rem; letter-spacing: .08em; }
+      .brand-banner-section { padding: 1rem 0 4rem; }
+      .craft-section, .collection-section, .story-section { padding: 4.5rem 0; }
+      .craft-grid { grid-template-columns: 1fr; }
+      .craft-img-wrapper { height: 230px; }
+      .grid { grid-template-columns: 1fr; gap: 1rem; }
+      .card.featured { grid-column: span 1; flex-direction: column; }
+      .card.featured .card-img-wrapper { height: 330px; }
+      .card.featured .card-info { text-align: center; padding: 1.4rem .4rem .3rem; }
+      .card-actions { flex-direction: column; }
+      .card-actions button { width: 100%; }
+      .modal-box { width: calc(100% - 1.2rem); padding: 2rem 1.1rem; }
+      .pay-tabs { flex-wrap: wrap; }
+      .pay-tab { min-width: 30%; font-size: .72rem; }
+      .bank-card-num { font-size: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      #starfield { display: none; }
+    }
+
     </style>
 </head>
 <body>
@@ -810,9 +978,9 @@
     <!-- Hero 首屏 -->
     <section class="hero">
         <div class="container">
-            <span class="hero-badge cinzel">HAUTE HORLOGERIE & MAROQUINERIE</span>
-            <h1 class="hero-title cinzel gold-gradient-text">凝结时光之华<br>极尽星空之美</h1>
-            <p class="hero-subtitle">Maison Zoria 铭兹世家 · 顶级珠宝腕表与私人高定皮具</p>
+            <span class="hero-badge cinzel">MAISON ZORIA · PRIVATE COLLECTION</span>
+            <h1 class="hero-title cinzel gold-gradient-text">为少数而作<br>为时间而留</h1>
+            <p class="hero-subtitle">Maison Zoria 铭兹 · 珠宝腕表与私人定制皮具</p>
             <a href="#collection" class="gold-border-btn cinzel">探索私享臻品 (EXPLORE COLLECTION)</a>
         </div>
     </section>
@@ -831,7 +999,7 @@
         <div class="container">
             <div style="text-align: center;">
                 <h2 class="cinzel gold-gradient-text" style="font-size: 2rem; margin-bottom: 0.5rem;">ATELIER SAVOIR-FAIRE</h2>
-                <p style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 0.2em;">不流于表面 · 经得起时间推敲的世家造诣</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem; letter-spacing: 0.2em;">MATERIAL · FORM · FINISH</p>
             </div>
 
             <div class="craft-grid">
@@ -841,7 +1009,7 @@
                         <img src="lost_wax_craft.jpg.png" alt="失蜡金工微雕" onerror="this.src='lost_wax_craft.jpg'">
                     </div>
                     <div class="craft-title cinzel">失蜡金工微雕</div>
-                    <div class="craft-desc">传承百年失蜡铸造工艺，将黄金与铂金化作流动的诗篇，于毫厘间雕刻出独一无二的星云浮雕。</div>
+                    <div class="craft-desc">以精细金工塑造层次与光影，让金属表面呈现克制而丰富的细节。</div>
                 </div>
 
                 <!-- 2. 手工托斯卡纳皮缝 -->
@@ -850,7 +1018,7 @@
                         <img src="tuscany_leather_craft.jpg.png" alt="手工托斯卡纳皮缝" onerror="this.src='tuscany_leather_craft.jpg'">
                     </div>
                     <div class="craft-title cinzel">手工托斯卡纳皮缝</div>
-                    <div class="craft-desc">甄选顶级托斯卡纳小牛皮，由资深匠人以双针马鞍缝法纯手工穿缝，随岁月流转散发温润Patina光泽。</div>
+                    <div class="craft-desc">围绕皮革触感、结构与缝线比例反复推敲，让材质与轮廓自然融合。</div>
                 </div>
 
                 <!-- 3. 宝石爪镶工艺 -->
@@ -859,7 +1027,7 @@
                         <img src="diamond_prong_setting.jpg.png" alt="宝石爪镶工艺" onerror="this.src='diamond_prong_setting.jpg'">
                     </div>
                     <div class="craft-title cinzel">宝石爪镶工艺</div>
-                    <div class="craft-desc">严苛甄选顶级天然钻石与高色级宝石，经由极其精密的爪镶手法，令每一束微光皆能完美折射。</div>
+                    <div class="craft-desc">以镶嵌结构、宝石比例与佩戴舒适度为考量，平衡闪耀与整体设计。</div>
                 </div>
             </div>
         </div>
@@ -870,7 +1038,7 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title cinzel gold-gradient-text">THE MASTERPIECE COLLECTION</h2>
-                <p class="section-desc">每一件作品皆为独一无二的世家艺术，静候有缘藏家</p>
+                <p class="section-desc">SELECTED OBJECTS · PRIVATE COMMISSIONS</p>
             </div>
 
             <div class="grid">
@@ -885,7 +1053,7 @@
                         <div class="card-title-en cinzel gold-gradient-text">Dream Awakening</div>
                         <div class="card-title-cn">梦醒时分 · 顶级珠宝高定腕表</div>
                         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem; line-height: 1.7;">
-                            全表密集镶嵌顶级天然钻石，18K黄金与铂金交织连结。天然虹光珍珠母贝表盘，搭载瑞士超薄复杂机械机芯。
+                            以珠宝镶嵌与金属质感构筑视觉层次，搭配珍珠母贝表盘设计。机芯、材质与镶嵌规格以最终定制确认单为准。
                         </p>
                         <div class="card-price cinzel">¥ 3,000,000 CNY</div>
                         <div class="card-actions">
@@ -1006,9 +1174,7 @@
         <div class="container">
             <h2 class="cinzel gold-gradient-text" style="font-size: 1.8rem; margin-bottom: 1.8rem;">HERITAGE & PHILOSOPHY</h2>
             <div class="story-content">
-                “真正的奢华，从不需要喧哗与迎合。<br>
-                Maison Zoria 诞生于对极致工艺与永恒美学的执着追求。<br>
-                当一件杰作交到尊贵藏家手中时，它便正式隐入家族的私密宝库，成为陪伴一生、代代相传的无价资产。”
+                “奢华不必喧哗。<br>它存在于比例、触感与那些不必向所有人解释的选择之中。<br>Maison Zoria 以独立的设计语言，探索值得被珍藏的当代作品。”
             </div>
         </div>
     </section>
@@ -1189,7 +1355,7 @@
                     totalPrice += item.price * item.qty;
                     listEl.innerHTML += `
                         <div class="cart-item">
-                            <img src="${item.img}" class="cart-item-img">
+                            <img src="${item.img}" class="cart-item-img" alt="${item.name}">
                             <div class="cart-item-details">
                                 <div class="cart-item-title">${item.name}</div>
                                 <div class="cart-item-price">¥ ${item.price.toLocaleString()} CNY</div>
